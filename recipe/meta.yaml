@@ -1,22 +1,21 @@
 {% set name = "jsonnet" %}
-{% set version = "0.11.2" %}
+{% set version = "0.14.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3201ca48b0ddc4d65a534686436cd435491addcf26346b07dbd69b38f66f4f8f
+  path: C:\Users\vmadiath_exd\Projects\public_github\jsonnet
+#  patches:
+#    - 001-enable-msvc.patch
 
 build:
-  skip: True  # [win]
   number: 0
 
 requirements:
   build:
     - cmake
-    - make
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
